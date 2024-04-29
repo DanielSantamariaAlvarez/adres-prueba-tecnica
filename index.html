@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Gestión de Adquisiciones</title>
+</head>
+
+<body>
+    <header>
+        <h1>Gestión de Adquisiciones</h1>
+    </header>
+    <div class="container">
+        
+        
+        
+        <section class="filter-section">
+            <h2>Filtrar Adquisiciones</h2>
+            <form id="filtroAdquisiciones">
+                <!-- Cada conjunto de label y input/select se trata individualmente para la cuadrícula -->
+                <div class="row-l">
+                    <label for="tipoFilter">Tipo de Bien o Servicio:</label>
+                    <select id="tipoFilter">
+                        <option value="">Seleccione una opción</option>
+                    </select>
+                </div>
+                <div class="row-l">
+                    <label for="unidadFilter">Unidad Administrativa:</label>
+                    <select id="unidadFilter">
+                        <option value="">Seleccione una opción</option>
+                    </select>
+                </div>
+                <div class="row-l">
+                    <label for="proveedorFilter">Proveedor:</label>
+                    <select id="proveedorFilter">
+                        <option value="">Seleccione una opción</option>
+                    </select>
+                </div>
+                <div class="row-l">
+                    <label for="presupuestoFilter">Presupuesto:</label>
+                    <div class="row">
+                        <select id="presupuestoComparator">
+                            <option value="gt">Mayor que</option>
+                            <option value="lt">Menor que</option>
+                            <option value="eq">Igual a</option>
+                        </select>
+                        <input type="number" id="presupuestoFilter" placeholder="">
+                    </div>
+                    
+                </div>
+                <div>
+                    <label for="valorUnitarioFilter">Valor Unitario:</label>
+                    <div class="row">
+                        <select id="valorUnitarioComparator">
+                            <option value="gt">Mayor que</option>
+                            <option value="lt">Menor que</option>
+                            <option value="eq">Igual a</option>
+                        </select>
+                        <input type="number" id="valorUnitarioFilter" placeholder="">
+                    </div>
+                    
+                </div>
+                <div>
+                    <label for="valorTotalFilter">Valor Total:</label>
+                    <div class="row">
+                        <select id="valorTotalComparator">
+                            <option value="gt">Mayor que</option>
+                            <option value="lt">Menor que</option>
+                            <option value="eq">Igual a</option>
+                        </select>
+                        <input type="number" id="valorTotalFilter" placeholder="">
+                    </div>
+                    
+                </div>
+                <div>
+                    <label for="fechaInicioFilter">Fecha Desde:</label>
+                    <input type="date" id="fechaInicioFilter" placeholder="Desde">
+                </div>
+                <div>
+                    <label for="fechaFinFilter">Fecha Hasta:</label>
+                    <input type="date" id="fechaFinFilter" placeholder="Hasta">
+                </div>
+                <button type="submit">Aplicar Filtros</button>
+            </form>
+            <div id="resultadosAdquisiciones"></div>
+        </section>
+        
+        
+        
+        <section id="adquisiciones-container">
+            <section id="adquisitionForm">
+                <h2>Agregar Adquisición</h2>
+                <button onclick="toggleFormVisibility()">Agregar</button>
+                <!-- Formulario para agregar/modificar adquisiciones -->
+                <form onsubmit="handleSubmit(event)" style="display: none;">
+                    <input type="hidden" id="id" />
+                    <input type="text" id="tipo" placeholder="Tipo de Bien o Servicio" required />
+                    <input type="number" id="presupuesto" placeholder="Presupuesto" required />
+                    <input type="text" id="unidad" placeholder="Unidad Administrativa" required />
+                    <input type="number" id="cantidad" placeholder="Cantidad" required />
+                    <input type="number" id="valorUnitario" placeholder="Valor Unitario" required />
+                    <input type="text" id="fechaAdquisicion" placeholder="Fecha de Adquisición" onfocus="(this.type='date')" required />
+                    <input type="text" id="proveedor" placeholder="Proveedor" required />
+                    <input type="text" id="documentacion" placeholder="Documentación" required />
+                    <button type="submit">Guardar</button>
+                </form>
+            </section>
+            <div id="adquisitionList-container">
+                <h2>Lista de adquisiciones</h2>
+                <div id="adquisitionList"></div>
+            </div>
+            <div id="historialAdquisiciones-container">
+                <h2>Historial de Cambios</h2>
+                <div id="historialAdquisiciones"></div>
+            </div>
+        </section>
+    </div>
+    
+    
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

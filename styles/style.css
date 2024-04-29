@@ -1,0 +1,248 @@
+/* Variables de Color */
+:root {
+  --electric-blue: #7CE2E6;
+  --white: #FFFFFF;
+  --turquoise: #0ED7B1;
+  --delft-blue: #283557;
+  --savoy-blue: #5068B2;
+}
+
+/* Reset Básico */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+.container{
+  width: 85%;
+  margin: 0 auto
+}
+h1{
+  color: var(--white);
+}
+
+h2{
+  color: var(--delft-blue);
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+  background-color: var(--savoy-blue);
+}
+
+#adquisitionList {
+  margin: 20px;
+  padding: 10px;
+  background-color: var(--white);
+}
+.adquisition-card {
+  border: 1px solid var(--savoy-blue);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.adquisition-card .field {
+  margin-bottom: 10px;
+}
+
+.adquisition-card label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.adquisition-card input {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid var(--savoy-blue);
+  border-radius: 4px;
+}
+.adquisition-card input:focus {
+  border: 1px solid var(--savoy-blue);
+}
+
+.adquisition-card .buttons button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--savoy-blue);
+  color: white;
+  cursor: pointer;
+}
+
+.adquisition-card .buttons button:hover {
+  background-color: var(--delft-blue);
+}
+
+#adquisitionForm {
+  padding: 20px 10px;
+  width: 30%;
+  margin: 0 auto;
+}
+#adquisitionForm input {
+  width: 95%;
+  padding: 8px;
+  margin: 5px auto;
+  border: 1px solid var(--savoy-blue);
+  border-radius: 4px;
+}
+
+#adquisitionForm > button {
+  padding: 8px 16px;
+  background-color: var(--savoy-blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#adquisitionForm > button:hover {
+  background-color: var(--delft-blue);
+}
+
+#adquisitionForm form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+
+#adquisitionForm button[type="submit"]{
+  width: 300px;
+  display: block;
+  margin: 5px auto;
+  padding: 8px 16px;
+  background-color: var(--savoy-blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#adquisitionForm button[type="submit"]:hover{
+  background-color: var(--delft-blue);
+}
+
+#adquisiciones-container {
+  display: flex;
+  height: 100vh; /* Hace que el contenedor tenga el alto de la ventana del navegador */
+  width: 100%; /* Ocupa el ancho completo de la pantalla */
+  padding: 20px;
+  margin: 0 auto;
+}
+
+#adquisiciones-container > div {
+  flex: 1; /* Distribuye el espacio disponible por igual entre los divs */
+  overflow-y: auto; /* Agrega scroll vertical si el contenido es más largo que el alto del contenedor */
+  padding: 10px; /* Espaciado interno para no pegar el texto a los bordes */
+  margin: 5px; /* Pequeña separación entre los divs */
+}
+
+/* Asegúrate de que el body y html también se extiendan completamente para ocupar la altura completa de la ventana */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.filter-section {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.filter-section h3 {
+  color: var(--delft-blue);
+  margin-bottom: 15px;
+}
+
+.filter-section form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+}
+
+.filter-section label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: bold;
+}
+
+.filter-section select, 
+.filter-section input[type="number"], 
+.filter-section input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.filter-section form button {
+  grid-column: span 4; 
+  width: 20%;
+  margin: 10px 0 10px auto;
+  padding: 10px 20px;
+  background-color: var(--savoy-blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.filter-section form button:hover {
+  background-color: var(--delft-blue);
+}
+
+#filtroAdquisiciones .row{
+  display: flex;
+}
+#filtroAdquisiciones .row select{
+  width: 40%;
+  margin-right: 3px;
+}
+#filtroAdquisiciones label{
+  color: var(--delft-blue);
+  margin-top: 10px;
+}
+.card {
+  border: 1px solid var(--savoy-blue);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  border-radius: 8px; 
+  padding: 20px; 
+  margin: 20px 0; 
+  background-color: var(--white); 
+}
+
+.card p {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0 10px; 
+}
+
+.card hr {
+  border: none; 
+  background-color: #ccc; 
+  margin: 20px 0; 
+}
+
+#adquisitionList-container h2{
+  margin-left: 30px;
+}
+
+.adquisition-card.inactive {
+  opacity: 0.6; 
+  background-color: #f0f0f0; 
+}
