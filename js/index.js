@@ -10,13 +10,10 @@ const allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:5500'];
 
 const corsOptions = {
     origin: function (origin, callback) {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error('CORS not allowed from this origin'));
-        }
+        callback(null, true);
     },
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
 };
 
 app.use(express.json());
